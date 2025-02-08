@@ -21,8 +21,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Navigation Bar */
-/* Updated Navigation Bar Styles */
+/* Updated Navigation Bar */
 .cyber-nav {
     background: rgba(16, 16, 16, 0.95);
     backdrop-filter: blur(12px);
@@ -63,11 +62,14 @@ a:hover {
 .logo-text {
     color: #00bcd4;
     font-family: 'Courier New', monospace;
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Slightly larger for better visibility */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+    text-shadow: 0 0 15px rgba(0, 188, 212, 0.5); /* Increased opacity for better glow */
+    white-space: nowrap; /* Corrected syntax by removing 'fix' */
+    display: inline-block; /* Ensures proper spacing and alignment */
+    transition: all 0.3s ease; /* Optional: adds smooth hover effects */
 }
 
 .nav-links {
@@ -87,7 +89,7 @@ a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 1.2rem;
-    text-decoration: none;
+    text-decoration: none; /* Removes underline */
     color: #e0e0e0;
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -95,24 +97,9 @@ a:hover {
     overflow: hidden;
 }
 
+/* Remove underline effect */
 .nav-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(0, 188, 212, 0.1),
-        transparent
-    );
-    transition: 0.5s;
-}
-
-.nav-link:hover::before {
-    left: 100%;
+    content: none !important;
 }
 
 .link-icon {
@@ -212,7 +199,6 @@ a:hover {
         transform: rotate(-45deg) translate(7px, -6px);
     }
 }
-
 /* Hero Section */
 #hero {
     background: linear-gradient(135deg, #1f1f1f, #121212);
@@ -956,19 +942,20 @@ section h2 {
 }
 
 .view-publications {
-    background: none;
-    border: 2px solid #00bcd4;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: rgba(0, 188, 212, 0.2);
+    border: 1px solid #00bcd4;
+    border-radius: 4px;
     color: #00bcd4;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .view-publications:hover {
-    background: #00bcd4;
-    color: #121212;
+    background: rgba(0, 188, 212, 0.4);
+    transform: translateY(-2px);
 }
 
 @keyframes float {
