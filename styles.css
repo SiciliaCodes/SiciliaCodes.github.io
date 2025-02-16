@@ -1461,168 +1461,109 @@ section h2 {
     100% { opacity: 0.5; transform: translateY(0); }
 }
 
-/* Mobile-First Adjustments */
+/* Mobile Responsive Updates */
 @media (max-width: 768px) {
-    /* About Section */
-    .about-section {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-        margin: 1rem;
-        gap: 1rem;
+    /* Mobile Menu Enhancements */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(16, 16, 16, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+        transition: right 0.3s ease;
+        backdrop-filter: blur(15px);
     }
 
-    .profile-image {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        order: -1; /* Move image above text on mobile */
-    }
-
-    .content-box {
-        padding: 1rem;
+    .nav-item {
+        width: 100%;
         text-align: center;
     }
 
-    /* Floating Elements */
-    .floating-teapot,
-    .petri-float {
-        display: none; /* Hide floating elements on mobile */
-    }
-
-    /* Text Sizes */
-    .error-header {
-        font-size: 1.8rem;
-    }
-
-    .system-alert {
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-
-    .io-label {
-        font-size: 0.9rem;
-        margin: 0.5rem 0;
-    }
-
-    /* Navigation */
-    .nav-container {
-        padding: 0.5rem 1rem;
-    }
-
-    .logo-text {
-        font-size: 1rem;
-    }
-
-    /* Scroll Prompt */
-    .scroll-prompt {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        margin-top: 1.5rem;
-    }
-}
-
-/* Additional Mobile Fixes */
-@media (max-width: 480px) {
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .error-header {
-        font-size: 1.5rem;
-    }
-
-    .nav-links {
-        top: 50px;
-        width: 100%;
-        right: -100%;
-    }
-
     .nav-link {
-        padding: 1rem;
+        justify-content: center;
+        padding: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .logo-text {
-        white-space: normal; /* Allow logo text to wrap */
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
-    /* Ensure image visibility */
-    .about-section img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto 1rem;
+    /* Hero Section Adjustments */
+    #hero {
+        padding: 8rem 1rem 4rem;
+    }
+
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
     }
 
     /* Timeline Adjustments */
     .experience-timeline::before {
-        left: 20px;
+        left: 30px;
     }
 
     .timeline-dot {
-        left: 20px;
+        left: 30px;
     }
 
     .timeline-content {
-        width: calc(100% - 40px);
-        margin-left: 40px !important;
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+    }
+
+    /* About Section */
+    .about-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-/* Image Responsiveness */
-.profile-image {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 50%; /* Optional circular image */
-}
-
-/* Touch Target Sizing */
-.nav-link {
-    padding: 12px 16px; /* Larger touch targets */
-}
-
-/* Prevent Text Overflow */
-.io-label, .scroll-prompt {
-    word-break: break-word;
-    hyphens: auto;
-}
-
-/* Mobile Menu Enhancements */
-.menu-toggle {
-    display: block; /* Ensure menu toggle is visible */
-}
-
-.nav-links.active {
-    backdrop-filter: blur(20px); /* Better mobile menu readability */
-}
-
-/* Force GPU Acceleration for Smooth Animations */
-.about-section,
-.profile-image,
-.nav-links {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
-/* Pixel Ratio Adjustments */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+@media (max-width: 480px) {
     .logo-text {
-        -webkit-font-smoothing: antialiased;
-        text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+        display: none;
+    }
+
+    .nav-link {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
     }
 }
 
-/* Orientation-specific Adjustments */
-@media (max-width: 768px) and (orientation: landscape) {
-    .about-section {
-        grid-template-columns: 150px 1fr;
-    }
-    
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Active Section Highlight */
+section:target {
+    animation: highlight 1.5s ease;
+}
+
+@keyframes highlight {
+    from { background: rgba(0, 188, 212, 0.1); }
+    to { background: transparent; }
 }
